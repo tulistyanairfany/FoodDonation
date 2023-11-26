@@ -6,7 +6,9 @@
 		<tr>
 			<th>NO</th>
 			<th>NAMA PRODUK</th>
-			<th>JUMLAH PESANAN</th> 
+			<th>JUMLAH PESANAN</th>
+			<th>HARGA SATUAN</th>
+			<th>SUB-TOTAL</th>
 		</tr>
 
 		<?php  
@@ -20,13 +22,16 @@
 		 <tr>
 		 	<td><?php echo $no++ ?></td> 
 		 	<td><?php echo $psn->nama_makanan ?></td>
-		 	<td><?php echo $psn->jumlah ?></td>  
+		 	<td><?php echo $psn->jumlah ?></td>
+		 	<td><?php echo number_format($psn->harga,0,',','.') ?></td>
+		 	<td><?php echo number_format($subtotal,0,',','.') ?></td>
 		 </tr>
 
 		<?php endforeach ?>
 
 		<tr>
-			<td colspan="4" align="right">Total</td> 
+			<td colspan="4" align="right">Total</td>
+			<td align="right">Rp. <?php echo number_format($total,0,',','.') ?></td>
 		</tr>
  
 	</table>

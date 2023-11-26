@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h4>Upload Bukti Konformasi Makanan</h4>
+	<h4>Upload Bukti Konfirmasi Makanan Telah Diterima</h4>
 
 	<button class="btn btn-primary mb-3"data-toggle="modal" data-target="#bayar"><i class="fas fa-plus fa-sm"></i> Upload Bukti</button>
 

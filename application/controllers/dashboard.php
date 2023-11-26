@@ -52,16 +52,32 @@ class Dashboard extends CI_Controller{
 
 	public function proses_pesanan()
 	{
+		// $is_processed = $this->model_invoice->index();
+		// if($is_processed){
+		// 	// $this->cart->destroy();
+		// 	$this->load->view('templates/header');
+		// 	$this->load->view('templates/sidebar'); 
+		// 	$this->load->view('proses_pesanan');
+		// 	// $this->load->view('templates/footer');
+		// } else {
+		// 	echo "Maaf, Pesanan Anda Gagal diproses!";
+		// }	
+
 		$is_processed = $this->model_invoice->index();
-		if($is_processed){
-			$this->cart->destroy();
-			$this->load->view('templates/header');
+        if($is_processed){
+        $this->cart->destroy();
+        $this->load->view('templates/header');
 			$this->load->view('templates/sidebar'); 
 			$this->load->view('proses_pesanan');
 			$this->load->view('templates/footer');
-		} else {
-			echo "Maaf, Pesanan Anda Gagal diproses!";
-		}	
+        } else {
+            echo "Maaf, Pesanan Anda Gagal Diproses";
+        }
+			// $this->load->view('templates/header');
+			// $this->load->view('templates/sidebar'); 
+			// $this->load->view('detail_makanan');
+			// $this->load->view('templates/footer');
+
 	}
 
 	public function detail($id_makanan)
@@ -113,14 +129,14 @@ class Dashboard extends CI_Controller{
 			'gambar' 		=> $gambar
 		);
 
-		$this->model_makanan->tambah_bukti($data, 'tb_pembayaran');
+		$this->model_makanan->tambah_bukti($data, 'tb_konfirmasi');
 		redirect('dashboard/bukti_bayar');
 	}
 
 	public function hapus ($id)
 	{
 		$where = array('id_gb' => $id);
-		$this->model_invoice->hapus($where,'tb_pembayaran');
+		$this->model_invoice->hapus($where,'tb_konfirmasi');
 		redirect('dashboard/bukti_bayar');
 	}
 

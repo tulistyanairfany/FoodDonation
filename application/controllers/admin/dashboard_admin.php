@@ -24,7 +24,7 @@ class Dashboard_admin extends CI_Controller{
 	public function hapus ($id)
 	{
 		$where = array('id_gb' => $id);
-		$this->model_invoice->hapus($where,'tb_pembayaran');
+		$this->model_invoice->hapus($where,'tb_konfirmasi');
 		redirect('admin/invoice/bayar');
 	}
 }

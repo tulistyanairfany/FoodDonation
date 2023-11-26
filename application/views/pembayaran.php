@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<div >
+			<!-- <div class="btn btn-sm btn-success">
 				<?php 
 				$grand_total = 0;
 				if ($keranjang = $this->cart->contents())
@@ -11,9 +11,9 @@
 					{
 						$grand_total = $grand_total + $item['subtotal'];
 					}
-			
+				echo "<h4>Total Belanja Anda: Rp. ".number_format($grand_total,0,',','.');
 				 ?>
-			</div><br><br>
+			</div><br><br> -->
 
 			<h3>Masukkan Kelengkapan Data </h3>
 

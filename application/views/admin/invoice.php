@@ -10,6 +10,7 @@
 		</tr>
 
 		<?php foreach ($invoice as $inv): ?>
+			
 			<tr>
 				<td><?php echo $inv->id ?></td>
 				<td><?php echo $inv->nama ?></td> 

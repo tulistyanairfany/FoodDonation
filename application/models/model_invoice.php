@@ -86,14 +86,14 @@ class Model_invoice extends CI_Model{
 	{
 		$user =  $this->session->userdata('username');
 		if($user == "admin"){
-			$result = $this->db->get('tb_pembayaran');
+			$result = $this->db->get('tb_konfirmasi');
 			if($result->num_rows() >= 0){
 				return $result->result();
 			} else {
 				return false;
 			}
 		} else {
-			$result = $this->db->get_where('tb_pembayaran', array('nama' => $user));
+			$result = $this->db->get_where('tb_konfirmasi', array('nama' => $user));
 			if($result->num_rows() >= 0){
 				return $result->result();
 			} else {
