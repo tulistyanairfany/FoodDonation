@@ -13,6 +13,8 @@ class Invoice extends CI_Controller{
 			redirect('auth/login');
 		}
 	}
+
+	
 	
 	public function index()
 	{
@@ -23,6 +25,18 @@ class Invoice extends CI_Controller{
 		$this->load->view('templates_admin/footer');
 	}
 
+	public function ValidasiInvoice($id_invoice) {
+		$id = $id_invoice;
+		$data_update = array(
+			'status_invoice' => 1
+		);
+		$data_where = array(
+			'id' => $id
+		);
+		$this->model_invoice->UpdateStatus($data_where, $data_update, 'tb_invoice');
+		redirect('admin/invoice');
+	}
+	
 	public function detail($id_invoice)
 	{
 		$data['invoice'] = $this->model_invoice->ambil_id_invoice($id_invoice);

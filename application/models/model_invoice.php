@@ -108,5 +108,10 @@ class Model_invoice extends CI_Model{
 		$this->db->delete($table);
 	}
 
+	    public function UpdateStatus($where,$data,$table){
+        $this->db->where($where); 
+        $query = $this->db->update($table,$data);
+        return $query;
+    }
 	
 }
